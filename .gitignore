@@ -1,0 +1,7 @@
+[Bb]in/
+[Oo]bj/
+
+$RECYCLE.BIN/
+.vs/
+*.csproj.user
+*.lock.json
