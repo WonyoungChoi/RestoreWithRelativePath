@@ -10,36 +10,42 @@ Because the 5.5.1 version tries to resolve the relative path based on the projec
 
 ## Result
 ```
++ echo '#### Restore with nuget 5.4.0 ###'
 #### Restore with nuget 5.4.0 ###
-Clearing NuGet HTTP cache: /home/zzervb/.local/share/NuGet/v3-cache
-Clearing NuGet global packages folder: /home/zzervb/.nuget/packages/
++ mono tools/nuget_5.4.0.exe locals all -clear
+Clearing NuGet HTTP cache: /home/user/.local/share/NuGet/v3-cache
+Clearing NuGet global packages folder: /home/user/.nuget/packages/
 Clearing NuGet Temp cache: /tmp/NuGetScratch
-Clearing NuGet plugins cache: /home/zzervb/.local/share/NuGet/plugins-cache
+Clearing NuGet plugins cache: /home/user/.local/share/NuGet/plugins-cache
 Local resources cleared.
++ mono tools/nuget_5.4.0.exe restore ConsoleApp1.sln -Source ./NuGets
 MSBuild auto-detection: using msbuild version '15.0' from '/usr/lib/mono/msbuild/15.0/bin'.
-Restoring packages for /home/zzervb/Test/DotnetBug/RelativeRestore/ConsoleApp1/ConsoleApp1.csproj...
+Restoring packages for /home/user/RestoreWithRelativePath/ConsoleApp1/ConsoleApp1.csproj...
 Installing Microsoft.NETCore.App.Ref 3.0.0.
 Installing Newtonsoft.Json 12.0.3.
 Committing restore...
-Assets file has not changed. Skipping assets file writing. Path: /home/zzervb/Test/DotnetBug/RelativeRestore/ConsoleApp1/obj/project.assets.json
-Restore completed in 409.6 ms for /home/zzervb/Test/DotnetBug/RelativeRestore/ConsoleApp1/ConsoleApp1.csproj.
+Assets file has not changed. Skipping assets file writing. Path: /home/user/RestoreWithRelativePath/ConsoleApp1/obj/project.assets.json
+Restore completed in 404.66 ms for /home/user/RestoreWithRelativePath/ConsoleApp1/ConsoleApp1.csproj.
 
 NuGet Config files used:
-    /home/zzervb/.config/NuGet/NuGet.Config
+    /home/user/.config/NuGet/NuGet.Config
 
 Feeds used:
-    /home/zzervb/Test/DotnetBug/RelativeRestore/NuGets
+    /home/user/RestoreWithRelativePath/NuGets
 
 Installed:
-    1 package(s) to /home/zzervb/Test/DotnetBug/RelativeRestore/ConsoleApp1/ConsoleApp1.csproj
-    
+    1 package(s) to /home/user/RestoreWithRelativePath/ConsoleApp1/ConsoleApp1.csproj
+
++ echo '#### Restore with nuget 5.5.1 ###'
 #### Restore with nuget 5.5.1 ###
-Clearing NuGet HTTP cache: /home/zzervb/.local/share/NuGet/v3-cache
-Clearing NuGet global packages folder: /home/zzervb/.nuget/packages/
++ mono tools/nuget_5.5.1.exe locals all -clear
+Clearing NuGet HTTP cache: /home/user/.local/share/NuGet/v3-cache
+Clearing NuGet global packages folder: /home/user/.nuget/packages/
 Clearing NuGet Temp cache: /tmp/NuGetScratch
-Clearing NuGet plugins cache: /home/zzervb/.local/share/NuGet/plugins-cache
+Clearing NuGet plugins cache: /home/user/.local/share/NuGet/plugins-cache
 Local resources cleared.
++ mono tools/nuget_5.5.1.exe restore ConsoleApp1.sln -Source ./NuGets
 MSBuild auto-detection: using msbuild version '15.0' from '/usr/lib/mono/msbuild/15.0/bin'.
-Restoring packages for /home/zzervb/Test/DotnetBug/RelativeRestore/ConsoleApp1/ConsoleApp1.csproj...
-The local source '/home/zzervb/Test/DotnetBug/RelativeRestore/ConsoleApp1/NuGets' doesn't exist.
+Restoring packages for /home/user/RestoreWithRelativePath/ConsoleApp1/ConsoleApp1.csproj...
+The local source '/home/user/RestoreWithRelativePath/ConsoleApp1/NuGets' doesn't exist.
 ```
