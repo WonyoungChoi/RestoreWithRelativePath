@@ -3,6 +3,8 @@
 When specifying a relative path with `-Source` option in `nuget restore`, an error occurs in 5.5.1 version.
 Because the 5.5.1 version tries to resolve the relative path based on the project file location.
 
+Reported Issue: [NuGet.Home#9406](https://github.com/NuGet/Home/issues/9406)
+
 ## Run Test
 ```sh
 ./restore_test.sh
